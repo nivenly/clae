@@ -16,7 +16,7 @@ import (
 )
 
 const DEFAULT_LISTEN = ":8080"
-const DEFAULT_DATABASE_FILE = "clae.db"
+const DEFAULT_DATABASE_FILE = "nivenly-clae.db"
 
 type Contributor struct {
 	gorm.Model

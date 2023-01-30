@@ -19,10 +19,10 @@ spec:
       containers:
       - name: clae
         imagePullPolicy: Always
-        image: ghcr.io/aurae-runtime/clae:main
+        image: ghcr.io/nivenly/clae:main
         env:
           - name: DATABASE
-            value: /sqlite/clae.db
+            value: /sqlite/nivenly-clae.db
           - name: LISTEN
             value: ":30035"
           - name: TOKEN

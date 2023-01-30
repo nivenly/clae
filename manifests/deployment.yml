@@ -24,7 +24,7 @@ spec:
           - name: DATABASE
             value: /sqlite/nivenly-clae.db
           - name: LISTEN
-            value: ":30035"
+            value: ":30036"
           - name: TOKEN
             valueFrom:
               secretKeyRef:
@@ -36,7 +36,7 @@ spec:
             memory: "128Mi"
             cpu: "500m"
         ports:
-        - containerPort: 30035
+        - containerPort: 30036
         volumeMounts:
           - mountPath: /sqlite
             name: clae-sqlite

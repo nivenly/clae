@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: clae
+spec:
+  selector:
+    matchLabels:
+      app: clae
+  template:
+    metadata:
+      labels:
+        app: clae
+    spec:
+      hostNetwork: true
+      volumes:
+      - name: clae-sqlite
+        hostPath:
+          path: /data/clae
+      containers:
+      - name: clae
+        imagePullPolicy: Always
+        image: ghcr.io/aurae-runtime/clae:main
+        env:
+          - name: DATABASE
+            value: /sqlite/clae.db
+          - name: LISTEN
+            value: ":30035"
+          - name: TOKEN
+            valueFrom:
+              secretKeyRef:
+                name: clae-token
+                key: TOKEN
+                optional: false
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 30035
+        volumeMounts:
+          - mountPath: /sqlite
+            name: clae-sqlite

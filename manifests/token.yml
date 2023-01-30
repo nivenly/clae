@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: clae-token
+type: Opaque
+data:
+  TOKEN: bXktZGlydHktc2VjcmV0

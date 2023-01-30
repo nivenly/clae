@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Nivenly - Contributor License Agreement</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+        <style>
+            body {
+                margin-top: 2.5em;
+            }
+            label {
+                margin-top: 1.3em;
+                font-weight: bold;
+            }
+            a {
+                text-decoration: none;
+            }
+            .top {
+                list-style-type: none;
+                margin: 15;
+                padding: 0;
+                overflow: hidden;
+            }
+        </style>
+    </head>
+    <body class="bg-light">
+        <div class="container">
+            <ul class="top" >
+                <li style="float: left; padding-top: 145px"><h1>Contributor License Agreement</h1></li>
+                <li style="float: right"><img src="/logo" width="200px"></li>
+            </ul>
+            <p>
+                The Nivenly Foundation ("we" or "the foundation") is a 501(c)3 non-profit corporation which intends to legally protect our contributors from unwanted extortion and exploitation.
+                In order to protect our contributions, we ask that all contributors to the project sign a contributor license agreement or "cla".
+            </p>
+
+            <h4>The 2 Types of Licenses</h4>
+
+            <p>Depending on the project you intend to work on, you may need to sign one or both of the contributor license agreements below.</p>
+            <ul>
+                <li>"<b>Source Code</b>" is an <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache 2.0</a> license which is used as our default license for software, architecture, and source code.</li>
+                <li>"<b>Content</b>" is an <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons BY-SA</a> license which is used as our default license for documentation, blogs, and media content.</li>
+            </ul>
+            <p>We suggest signing both the <b>source code</b> contributor license agreement, as well as the <b>content</b> license agreement.</p>
+            <p>All Nivenly projects will clearly indicate their required licenses agreements by displaying "Source Code" or "Content" license requirements in their public documentation under "Nivenly Licensing Terms".
+
+            <h2>Source Code Contributor Terms</h2>
+            <p>I have read the <a href="https://github.com/nivenly/governance/blob/main/CLA.md" target="_blank">Contributor License Agreement terms</a> of the Nivenly governance.</p>
+            <p>I agree to abide by the contributor license agreement for the project. I agree that all contributions made within any GitHub organization controlled by the Nivenly foundation are legally bound to the terms listed at the time of access.</p>
+            
+            <strong>Grant of Copyright</strong>
+            <p>I hereby grant to The Nivenly Foundation and to recipients of software distributed by the project a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable copyright license to reproduce, prepare derivative works of, publicly display, publicly perform, sublicense, and distribute your contributions and such derivative works.</p>
+
+            <strong>Apache License v2.0</strong>
+            <p>I hereby agree to the terms and conditions for use, reproduction, and distribution of the associated Apache license v2.0 and other corresponding licenses where applicable.</p>
+
+            <h2>Content Contributor Terms</h2>
+            <p>I have read the <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</a> terms.</p>
+
+            <p>I hereby agree to the terms and conditions in the Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) for all work contributed under "the content" license agreement.</p>
+
+            <div>
+                <form action="" method="POST">
+
+                    {{if .ErrMsg}}
+                    <div class="alert alert-danger"><strong>ERROR:</strong> {{.ErrMsg}}</div>
+                    {{end}}
+
+                    <div>
+                        <label for="legalname" class="form-label">Full legal Name</label>
+                        <input type="text" class="form-control" id="legalname" name="legalname" maxlength="128" required/>
+                    </div>
+                    <div>
+                        <label for="email" class="form-label">Email Address</label>
+                        <div class="input-group has-validation">
+                            <span class="input-group-text">@</span>
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Email Address" required="">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="ghusername" class="form-label">GitHub Username</label>
+                        <div class="input-group has-validation">
+                            <span class="input-group-text"><i class="bi-github"></i></span>
+                            <input type="text" class="form-control" id="ghusername" name="ghusername" maxlength="128" required
+                                placeholder="For https://github.com/krisnova you would enter 'krisnova'"/>
+                        </div>
+                    </div>
+                    <div>
+                        <p style="margin-top: 1.2em;; margin-bottom: 0.2em; font-weight: bold;">"Source Code" Agreement of Terms</p>
+                        <input style="margin-top: 0.3em; margin-right: 0.3em;" type="checkbox" class="form-check-input" id="agreed" name="agreed" required/>
+                        <label style="margin-top: 0em; font-weight: 500;" for="agreed">I agree to the "source code" terms listed above.</label>
+                    </div>
+                    <div>
+                        <p style="margin-top: 1.2em;; margin-bottom: 0.2em; font-weight: bold;">"Content" Agreement of Terms</p>
+                        <input style="margin-top: 0.3em; margin-right: 0.3em;" type="checkbox" class="form-check-input" id="agreed" name="agreed" required/>
+                        <label style="margin-top: 0em; font-weight: 500;" for="agreed">I agree to the "content" terms listed above.</label>
+                    </div>
+
+                    <div style="margin-top: 2em;">
+                        <input type="submit" class="form-control btn btn-primary" id="submit" name="submit"/>
+                    </div>
+                </form>
+            </div>
+
+            <hr style="margin-top: 2em;"/>
+            <p><a href="https://github.com/aurae-runtime">https://github.com/aurae-runtime</a></p>
+        </div>
+    </body>
+</html>

@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Secret
 metadata:
-  name: clae-token
+  name: clae-nivenly-token
 type: Opaque
 data:
   TOKEN: YmFybmFieS1zbmFja3Mtc2VjcmV0

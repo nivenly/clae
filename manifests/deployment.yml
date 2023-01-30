@@ -28,7 +28,7 @@ spec:
           - name: TOKEN
             valueFrom:
               secretKeyRef:
-                name: clae-token
+                name: clae-nivenly-token
                 key: TOKEN
                 optional: false
         resources:

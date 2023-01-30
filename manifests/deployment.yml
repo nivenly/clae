@@ -1,15 +1,15 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: clae
+  name: clae-nivenly
 spec:
   selector:
     matchLabels:
-      app: clae
+      app: clae-nivenly
   template:
     metadata:
       labels:
-        app: clae
+        app: clae-nivenly
     spec:
       hostNetwork: true
       volumes:

@@ -167,7 +167,7 @@ func (c *CLAE) DumpHandler(w http.ResponseWriter, r *http.Request) {
 	providedToken := strings.TrimSpace(r.URL.Query().Get("token"))
 	expectedToken := strings.TrimSpace(os.Getenv("TOKEN"))
 	if providedToken != expectedToken {
-		log.WithFields(log.Fields{"RemoteAddr": remoteAddr, "providedToken": providedToken, "expectedToken": expectedToken}).Errorf("invalid token for GET /dump")
+		log.WithFields(log.Fields{"RemoteAddr": remoteAddr}).Errorf("invalid token for GET /dump")
 		w.WriteHeader(403)
 		return
 	}

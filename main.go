@@ -8,6 +8,7 @@ import (
 	"net/mail"
 	"os"
 	"regexp"
+	"strings"
 
 	log "github.com/sirupsen/logrus"
 	"gorm.io/driver/sqlite"
@@ -163,9 +164,10 @@ func (c *CLAE) DumpHandler(w http.ResponseWriter, r *http.Request) {
 		remoteAddr = forwardedFor
 	}
 
-	token := r.URL.Query().Get("token")
-	if token != os.Getenv("TOKEN") {
-		log.WithFields(log.Fields{"RemoteAddr": remoteAddr, "providedToken": token, "expectedToken": os.Getenv("TOKEN")}).Errorf("invalid token for GET /dump")
+	providedToken := strings.TrimSpace(r.URL.Query().Get("token"))
+	expectedToken := strings.TrimSpace(os.Getenv("TOKEN"))
+	if providedToken != expectedToken {
+		log.WithFields(log.Fields{"RemoteAddr": remoteAddr, "providedToken": providedToken, "expectedToken": expectedToken}).Errorf("invalid token for GET /dump")
 		w.WriteHeader(403)
 		return
 	}
@@ -193,8 +195,9 @@ func (c *CLAE) ContributorHandler(w http.ResponseWriter, r *http.Request) {
 		remoteAddr = forwardedFor
 	}
 
-	token := r.URL.Query().Get("token")
-	if token != os.Getenv("TOKEN") {
+	providedToken := strings.TrimSpace(r.URL.Query().Get("token"))
+	expectedToken := strings.TrimSpace(os.Getenv("TOKEN"))
+	if providedToken != expectedToken {
 		log.WithField("RemoteAddr", remoteAddr).Errorf("invalid token for GET /contributor")
 		w.WriteHeader(403)
 		return

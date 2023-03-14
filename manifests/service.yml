@@ -10,4 +10,3 @@ spec:
       port: 80
       targetPort: clae-nivenly
       name: clae-nivenly
- 

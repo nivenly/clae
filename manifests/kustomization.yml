@@ -3,7 +3,7 @@ kind: Kustomization
 
 resources:
 - namespace.yml
-- deployment.yml
+- statefulset.yml
 - service.yml
 - token.yml
 - ingress.yml

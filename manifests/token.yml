@@ -4,4 +4,5 @@ metadata:
   name: clae-nivenly-token
 type: Opaque
 data:
-  TOKEN: YmFybmFieS1zbmFja3Mtc2VjcmV0
+  # This is not the real value! You can find the real value in the nivenly-ops vault.
+  TOKEN: THIS_VALUE_WILL_FAIL_TO_APPLY_BECAUSE_ITS_NOT_BASE_64D

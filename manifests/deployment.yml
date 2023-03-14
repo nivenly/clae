@@ -1,8 +1,9 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: clae-nivenly
 spec:
+  serviceName: clae-nivenly
   selector:
     matchLabels:
       app: clae-nivenly
@@ -37,6 +38,17 @@ spec:
             cpu: "500m"
         ports:
         - containerPort: 30036
+          name: clae-nivenly
         volumeMounts:
           - mountPath: /sqlite
-            name: clae-sqlite
+            name: clae-nivenly-pvc
+  volumeClaimTemplates:
+  - metadata:
+      name: clae-nivenly-pvc
+    spec:
+      accessModes:
+      - ReadWriteOnce
+      resources:
+        requests:
+          storage: 100Gi
+      storageClassName: do-block-storage

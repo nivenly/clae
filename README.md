@@ -40,7 +40,7 @@ Required for legal purposes. Do not remove.
 
 ### Token 
 
-The token will need to be `base64` encoded to the secret. The current value of the token can be found in 1Password in the [nivenly-ops vault](https://hachyderm.1password.com/vaults/7eqql3ejerit3pt2g2r2hvj24q/allitems/lrtk32mvhsxgmb2alnh354m4zi0)
+The token will need to be `base64` encoded to the secret. The current value of the token can be found in 1Password in the [nivenly-ops vault](https://hachyderm.1password.com/vaults/7eqql3ejerit3pt2g2r2hvj24q/allitems/lrtk32mvhsxgmb2alnh354m4zi).
 
 ```bash 
 echo -n "my-dirty-secret" | base64 

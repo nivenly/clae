@@ -5,4 +5,4 @@ metadata:
 type: Opaque
 data:
   # This is not the real value! You can find the real value in the nivenly-ops vault.
-  TOKEN: YmFybmFieS1zbmFja3Mtc2VjcmV0
+  TOKEN: THIS_VALUE_WILL_FAIL_TO_APPLY_BECAUSE_ITS_NOT_BASE_64D

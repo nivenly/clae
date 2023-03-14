@@ -1,13 +1,13 @@
 package main
 
 import (
+	_ "embed"
 	"encoding/json"
 	"html/template"
 	"net/http"
 	"net/mail"
 	"os"
 	"regexp"
-	_ "embed"
 
 	log "github.com/sirupsen/logrus"
 	"gorm.io/driver/sqlite"
@@ -68,8 +68,8 @@ func main() {
 //go:embed html/nivenly.png
 var logo []byte
 
-func LogoHandler (w http.ResponseWriter, r *http.Request) {
-    w.WriteHeader(200)
+func LogoHandler(w http.ResponseWriter, r *http.Request) {
+	w.WriteHeader(200)
 	w.Write(logo)
 }
 
@@ -165,7 +165,7 @@ func (c *CLAE) DumpHandler(w http.ResponseWriter, r *http.Request) {
 
 	token := r.URL.Query().Get("token")
 	if token != os.Getenv("TOKEN") {
-		log.WithField("RemoteAddr", remoteAddr).Errorf("invalid token for GET /dump")
+		log.WithFields(log.Fields{"RemoteAddr": remoteAddr, "providedToken": token, "expectedToken": os.Getenv("TOKEN")}).Errorf("invalid token for GET /dump")
 		w.WriteHeader(403)
 		return
 	}

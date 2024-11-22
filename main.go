@@ -128,9 +128,9 @@ func (c *CLAE) FormHandler(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 
-		if r.FormValue("agreed") != "on" {
+		if r.FormValue("agreed-source") != "on" || r.FormValue("agreed-content") != "on" {
 			log.WithField("RemoteAddr", remoteAddr).Infof("did not accept CLA")
-			renderForm(w, "Please tick the checkbox to agree the CLA.")
+			renderForm(w, "Please tick the checkboxes to agree to both the CLA \"source code\" and \"content\" terms.")
 			return
 		}
 
